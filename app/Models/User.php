@@ -123,6 +123,8 @@ use Laravel\Sanctum\HasApiTokens;
  * @property-read mixed $alert_same_default_password
  * @property string|null $type_customer
  * @method static Builder|User whereTypeCustomer($value)
+ * @property string|null $api_token
+ * @method static Builder|User whereApiToken($value)
  */
 class User extends Authenticatable
 {
