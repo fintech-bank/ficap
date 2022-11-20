@@ -186,6 +186,7 @@ return [
          * Package Service Providers...
          */
         Akibatech\FreeMobileSms\ServiceProvider::class,
+        App\Providers\FortifyServiceProvider::class,
 
         /*
          * Application Service Providers...
