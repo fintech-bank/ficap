@@ -4,14 +4,13 @@ namespace App\Models\Customer;
 
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * App\Models\Customer\CustomerPretCaution
- *
- * @method static \Illuminate\Database\Eloquent\Builder|CustomerPretCaution newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|CustomerPretCaution newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|CustomerPretCaution query()
- * @mixin \Eloquent
- */
 class CustomerPretCaution extends Model
 {
+    protected $guarded = [];
+    protected $dates = ['created_at', 'updated_at', 'date_naissance', 'signed_at'];
+
+    public function loan()
+    {
+        return $this->belongsTo(CustomerPret::class, 'customer_pret_id');
+    }
 }
