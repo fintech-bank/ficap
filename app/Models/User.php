@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Helper\CustomerHelper;
 use App\Models\Core\Agency;
 use App\Models\Core\DocumentCategory;
 use App\Models\Core\Event;
@@ -25,9 +24,6 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Sanctum\HasApiTokens;
-use NotificationChannels\WebPush\HasPushSubscriptions;
-use RTippin\Messenger\Contracts\MessengerProvider;
-use RTippin\Messenger\Traits\Messageable;
 
 /**
  * App\Models\User
@@ -130,7 +126,7 @@ use RTippin\Messenger\Traits\Messageable;
  */
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasPushSubscriptions;
+    use HasApiTokens, HasFactory, Notifiable;
 
     /**
      * The attributes that are mass assignable.
