@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::prefix('auth')->group(function () {
+    Route::get('login', [\App\Http\Controllers\Auth\LoginController::class, 'index'])->name('login.view');
+    Route::post('login', [\App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', \App\Http\Controllers\HomeController::class)->name('home');
+
+    Route::prefix('caution')->group(function () {
+        Route::get('/', [\App\Http\Controllers\CautionController::class, 'index'])->name('caution');
+        Route::get('{caution_id}', [\App\Http\Controllers\CautionController::class, 'show'])->name('caution.show');
+    });
 });
