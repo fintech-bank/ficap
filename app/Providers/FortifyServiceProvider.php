@@ -6,6 +6,8 @@ use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Actions\Fortify\UpdateUserProfileInformation;
+use App\Models\Customer\CustomerPretCaution;
+use App\Notifications\ChangePasswordNotification;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
@@ -32,5 +34,18 @@ class FortifyServiceProvider extends ServiceProvider
     public function boot()
     {
         Fortify::loginView('auth.login');
+        Fortify::authenticateUsing(function (Request $request) {
+            $user = CustomerPretCaution::where('email', $request->get('email'))->first();
+
+            if($user && \Hash::check($request->get('password'), $user->password)) {
+                if($user->created_at == $user->updated_at) {
+                    $user->notify(new ChangePasswordNotification());
+                }
+
+                return $user;
+            } else {
+                return redirect()->back()->with('warning', "Votre compte n'existe pas dans la base de donnée FICAP ou vous n'y avez pas accès !");
+            }
+        });
     }
 }

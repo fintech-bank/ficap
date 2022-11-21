@@ -25,5 +25,6 @@ Route::middleware(['auth'])->group(function () {
 
     Route::prefix('account')->group(function () {
         Route::get('/', [\App\Http\Controllers\Account\AccountController::class, 'index'])->name('account');
+        Route::put('password', [\App\Http\Controllers\Account\AccountController::class, 'password'])->name('account.password');
     });
 });
