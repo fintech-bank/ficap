@@ -1,9 +1,7 @@
 <?php
 
 namespace App\Models\Customer;
-
-use Illuminate\Auth\Authenticatable;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 /**
@@ -82,9 +80,9 @@ use Illuminate\Notifications\Notifiable;
  * @property-read mixed $type_caution_label
  * @property-read mixed $type_label
  */
-class CustomerPretCaution extends Model
+class CustomerPretCaution extends Authenticatable
 {
-    use Authenticatable,Notifiable;
+    use Notifiable;
     protected $guarded = [];
     protected $dates = ['created_at', 'updated_at', 'date_naissance', 'signed_at'];
     protected $appends = ['type_label', 'type_caution_label', 'status_label'];
