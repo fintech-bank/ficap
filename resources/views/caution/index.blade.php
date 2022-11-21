@@ -17,6 +17,11 @@
                         <div class="fw-bold fs-4 mb-1">Etat de la caution</div>
                         <div class="">{!! $user->status_label !!}</div>
                     </div>
+                    <div class="separator my-5"></div>
+                    <div class="d-flex flex-column">
+                        <div class="fw-bold fs-4 mb-1">Crédit impacté</div>
+                        <div class="">{{ $user->loan->wallet->name_account_generic }}</div>
+                    </div>
                 </div>
             </div>
         </div>
