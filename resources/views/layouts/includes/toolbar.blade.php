@@ -61,7 +61,7 @@
                                 <!--end::Bullet-->
                                 <!--begin::Checkbox-->
                                 <div class="form-check form-check-custom form-check-solid mx-5">
-                                    <input class="form-check-input" type="checkbox" value="" @if($step->complete()) checked @endif>
+                                    <input class="form-check-input" type="checkbox" value="" @if($step->isComplete()) checked @endif>
                                 </div>
                                 <!--end::Checkbox-->
                                 <!--begin::Description-->
