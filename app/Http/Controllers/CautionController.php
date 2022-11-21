@@ -8,7 +8,7 @@ class CautionController extends Controller
     {
         $document_pdf = auth()->user()->loan->customer->documents()
             ->where('reference', auth()->user()->loan->reference)
-            ->where('name', 'LIKE', '%Caution')
+            ->where('name', 'LIKE', '%Caution%')
             ->first();
 
         dd($document_pdf);
