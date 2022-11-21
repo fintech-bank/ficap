@@ -20,7 +20,7 @@
                     <div class="separator my-5"></div>
                     <div class="d-flex flex-column">
                         <div class="fw-bold fs-4 mb-1">Crédit impacté</div>
-                        <div class="">{{ $user->loan->wallet->name_account_generic }}</div>
+                        <a href="{{ route('credit') }}">{{ $user->loan->wallet->name_account_generic }}</a>
                         <div data-bs-toggle="tooltip" title="{!! $user->loan->status_explanation !!}">{!! $user->loan->status_label !!}</div>
                     </div>
                     <div class="separator my-5"></div>
@@ -36,6 +36,21 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-12">
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h3 class="card-title">Acte de cautionnement</h3>
+                    <div class="card-toolbar">
+                        <button type="button" class="btn btn-sm btn-success">
+                            <i class="fa-solid fa-signature me-2"></i> Signer
+                        </button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    
                 </div>
             </div>
         </div>
