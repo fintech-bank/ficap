@@ -50,7 +50,20 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    
+                    <div id="caution_file">
+                        <div id="canvas_container">
+                            <canvas id="pdf_renderer"></canvas>
+                        </div>
+                        <div id="navigation_controls">
+                            <button id="go_previous">Previous</button>
+                            <input id="current_page" value="1" type="number"/>
+                            <button id="go_next">Next</button>
+                        </div>
+                        <div id="zoom_controls">
+                            <button id="zoom_in">+</button>
+                            <button id="zoom_out">-</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -58,5 +71,17 @@
 @endsection
 
 @section("script")
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.0.279/pdf.min.js"></script>
+    <script type="text/javascript">
+        let myState = {
+            pdf: null,
+            currentPage: 1,
+            zoom: 1
+        }
 
+        pdfjsLib.getDocument('./my_document.pdf').then((pdf) => {
+            myState.pdf = pdf;
+            render();
+        });
+    </script>
 @endsection
