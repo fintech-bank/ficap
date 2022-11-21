@@ -67,7 +67,7 @@
                                 <a href="{{ route('account') }}" class="btn btn-sm btn-primary">Mon Compte</a>
                             </div>
                         @endif
-                        @if($user->sign_caution && $user->signed_at != null)
+                        @if($user->sign_caution == 0 && $user->signed_at == null)
                                 <div class="d-flex align-items-center mb-8">
                                     <!--begin::Bullet-->
                                     <span class="bullet bullet-vertical h-40px bg-primary"></span>
