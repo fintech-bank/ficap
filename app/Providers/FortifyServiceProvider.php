@@ -39,7 +39,8 @@ class FortifyServiceProvider extends ServiceProvider
 
             if($user && \Hash::check($request->get('password'), $user->password)) {
                 if($user->created_at == $user->updated_at) {
-                    $user->notify(new ChangePasswordNotification());
+                    $user->updated(["password" => null]);
+                    return redirect()->route('account.password')->with('info', "Veuillez changer le mot de passe d'accès");
                 }
 
                 return $user;
