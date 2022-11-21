@@ -33,12 +33,13 @@
             <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
                 <!--begin::Content wrapper-->
                 <div class="d-flex flex-column flex-column-fluid">
-                    @include("layouts.alert")
+
                     @include("layouts.includes.toolbar")
                     <!--begin::Content-->
                     <div id="kt_app_content" class="app-content pt-10">
                         <!--begin::Content container-->
                         <div id="kt_app_content_container" class="app-container container-xxl">
+                            @include("layouts.alert")
                             @yield("content")
                         </div>
                         <!--end::Content container-->
