@@ -85,7 +85,7 @@ class CustomerPretCaution extends Authenticatable
     use Notifiable;
     protected $guarded = [];
     protected $dates = ['created_at', 'updated_at', 'date_naissance', 'signed_at'];
-    protected $appends = ['type_label', 'type_caution_label', 'status_label'];
+    protected $appends = ['type_label', 'type_caution_label', 'status_label', 'full_name'];
 
     public function loan()
     {
@@ -142,6 +142,15 @@ class CustomerPretCaution extends Authenticatable
             ['id' => 'SCS', 'name' => "Société en commandite simple"],
             ['id' => 'SCA', 'name' => "Société en commandite par actions"],
         ])->toJson();
+    }
+
+    public function getFullNameAttribute()
+    {
+        if($this->type == 'physique') {
+            return $this->civility.". ".$this->firstname.' '.$this->lastname;
+        } else {
+            return $this->company;
+        }
     }
 
     public function getTypeCaution($format = '')
