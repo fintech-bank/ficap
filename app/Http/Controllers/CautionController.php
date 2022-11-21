@@ -14,7 +14,7 @@ class CautionController extends Controller
 
         return view('caution.index', [
             'user' => auth()->user(),
-            'document' => \Storage::disk('gdd')->publicUrl($document_pdf->url_folder)
+            'document' => \Storage::disk('gdd')->url($document_pdf->url_folder)
         ]);
     }
 }
