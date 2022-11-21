@@ -54,26 +54,21 @@
                     <!--end::Header-->
                     <!--begin::Body-->
                     <div class="card-body pt-3">
-                        @foreach($user->onboarding()->steps as $step)
+                        @if($user->created_at == $user->updated_at)
                             <div class="d-flex align-items-center mb-8">
                                 <!--begin::Bullet-->
                                 <span class="bullet bullet-vertical h-40px bg-primary"></span>
                                 <!--end::Bullet-->
-                                <!--begin::Checkbox-->
-                                <div class="form-check form-check-custom form-check-solid mx-5">
-                                    <input class="form-check-input" type="checkbox" value="" @if($step->complete) checked @endif>
-                                </div>
-                                <!--end::Checkbox-->
                                 <!--begin::Description-->
                                 <div class="flex-grow-1">
-                                    <a href="{{ $step->link }}" class="text-gray-800 text-hover-primary fw-bold fs-6">{{ $step->title }}</a>
+                                    <a href="{{ route('account') }}" class="text-gray-800 text-hover-primary fw-bold fs-6">Redéfinir le mot de passe</a>
                                 </div>
                                 <!--end::Description-->
                                 @if(!$step->complete)
-                                    <a href="{{ $step->link }}" class="btn btn-sm btn-primary">{{ $step->cta }}</a>
+                                    <a href="{{ route('account') }}" class="btn btn-sm btn-primary">Mon Compte</a>
                                 @endif
                             </div>
-                        @endforeach
+                        @endif
                     </div>
                     <!--end::Body-->
                 </div>
