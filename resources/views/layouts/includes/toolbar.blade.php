@@ -44,7 +44,7 @@
             <!--begin::Col-->
             <div class="col-md-8 d-flex justify-content-md-end">
                 <!--begin::Card-->
-                <div class="card card-flush bg-white border-0 mw-575px pt-3 pb-1">
+                <div class="card card-flush bg-white border-0 w-575px pt-3 pb-1">
                     <!--begin::Header-->
                     <div class="card-header d-flex align-items-center">
                         <!--begin::Title-->
