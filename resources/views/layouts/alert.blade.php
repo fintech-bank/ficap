@@ -15,7 +15,7 @@
 @endif
 
 @if(session()->has('info'))
-    <div class="alert alert-dismissible bg-bank d-flex flex-column flex-sm-row w-100 p-5 mb-10 align-items-center">
+    <div class="alert alert-dismissible bg-info d-flex flex-column flex-sm-row w-100 p-5 mb-10 align-items-center">
         <!--begin::Icon-->
         <!--begin::Svg Icon | path: icons/duotune/communication/com003.svg-->
         <i class="fa fa-info-circle text-white fs-2tx me-2"></i>
