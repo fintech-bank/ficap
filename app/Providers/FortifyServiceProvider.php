@@ -35,18 +35,5 @@ class FortifyServiceProvider extends ServiceProvider
     public function boot()
     {
         Fortify::loginView('auth.login');
-        Fortify::authenticateUsing(function (Request $request) {
-            $user = CustomerPretCaution::where('email', $request->get('email'))->first();
-
-            if($user && \Hash::check($request->get('password'), $user->password)) {
-                if($user->created_at == $user->updated_at) {
-                    $user->updated(["password" => null]);
-                    return redirect()->route('account.password')->with('info', "Veuillez changer le mot de passe d'accès");
-                }
-
-                return $user;
-            }
-            return $user;
-        });
     }
 }
