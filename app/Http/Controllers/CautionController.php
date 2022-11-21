@@ -14,7 +14,7 @@ class CautionController extends Controller
 
         return view('caution.index', [
             'user' => auth()->user(),
-            'document' => 'https://v2.fintech.ovh/'.$document_pdf->url_folder
+            'document' => \Storage::disk('gdd')->url($document_pdf->url_folder)
         ]);
     }
 }
