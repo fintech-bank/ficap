@@ -17,7 +17,6 @@
                 <!--begin::Username-->
                 <div class="d-flex flex-column">
                     <div class="fw-bold d-flex align-items-center fs-5">{{ $user->full_name }}
-                        <span class="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Pro</span>
                         {!! $user->type_caution_label !!}
                     </div>
                     <a href="#" class="fw-semibold text-muted text-hover-primary fs-7">{{ $user->email }}</a>
