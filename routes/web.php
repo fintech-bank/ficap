@@ -24,4 +24,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/', [\App\Http\Controllers\CautionController::class, 'index'])->name('caution');
         Route::get('{caution_id}', [\App\Http\Controllers\CautionController::class, 'show'])->name('caution.show');
     });
+
+    Route::prefix('account')->group(function () {
+        Route::get('/', [\App\Http\Controllers\Account\AccountController::class, 'index'])->name('account');
+    });
 });
