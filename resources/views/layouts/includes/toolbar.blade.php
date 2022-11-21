@@ -55,7 +55,6 @@
                     <!--begin::Body-->
                     <div class="card-body pt-3">
                         @foreach($user->onboarding()->steps as $step)
-                            @dd($step)
                             <div class="d-flex align-items-center mb-8">
                                 <!--begin::Bullet-->
                                 <span class="bullet bullet-vertical h-40px bg-primary"></span>
