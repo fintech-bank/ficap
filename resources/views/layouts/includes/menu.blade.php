@@ -2903,6 +2903,10 @@
             <!--end:Menu sub-->
         </div>
         <!--end:Menu item-->
+        <a class="menu-link">
+			<span class="menu-title">Tableau de Bord</span>
+			<span class="menu-arrow d-lg-none"></span>
+		</a>
     </div>
     <!--end::Menu-->
 </div>
