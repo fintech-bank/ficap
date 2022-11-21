@@ -77,7 +77,7 @@
                                         <a href="{{ route('caution') }}" class="text-gray-800 text-hover-primary fw-bold fs-6">Signer l'acte de cautionnement</a>
                                     </div>
                                     <!--end::Description-->
-                                    <a href="{{ route('account') }}" class="btn btn-sm btn-primary">Ma caution</a>
+                                    <a href="{{ route('caution') }}" class="btn btn-sm btn-primary">Ma caution</a>
                                 </div>
                         @endif
                     </div>
