@@ -3,6 +3,8 @@
 namespace App\Models\Customer;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Onboard\Concerns\GetsOnboarded;
+use Spatie\Onboard\Concerns\Onboardable;
 
 /**
  * App\Models\Customer\CustomerPretCaution
@@ -80,9 +82,9 @@ use Illuminate\Notifications\Notifiable;
  * @property-read mixed $type_caution_label
  * @property-read mixed $type_label
  */
-class CustomerPretCaution extends Authenticatable
+class CustomerPretCaution extends Authenticatable implements Onboardable
 {
-    use Notifiable;
+    use Notifiable,GetsOnboarded;
     protected $guarded = [];
     protected $dates = ['created_at', 'updated_at', 'date_naissance', 'signed_at'];
     protected $appends = ['type_label', 'type_caution_label', 'status_label', 'full_name'];

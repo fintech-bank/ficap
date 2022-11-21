@@ -20,6 +20,7 @@
         "lsnepomuceno/laravel-a1-pdf-sign": "*",
         "mmockelyn/laravel-insee": "dev-master",
         "predis/predis": "^2.0",
+        "spatie/laravel-onboard": "^2.4",
         "stripe/stripe-php": "^9.6"
     },
     "require-dev": {
