@@ -20,10 +20,8 @@ Route::prefix('auth')->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/', \App\Http\Controllers\HomeController::class)->name('home');
 
-    Route::prefix('caution')->group(function () {
-        Route::get('/', [\App\Http\Controllers\CautionController::class, 'index'])->name('caution');
-        Route::get('{caution_id}', [\App\Http\Controllers\CautionController::class, 'show'])->name('caution.show');
-    });
+    Route::get('caution', [\App\Http\Controllers\CautionController::class, 'index'])->name('caution');
+    Route::get('credit', [\App\Http\Controllers\CautionController::class, 'credit'])->name('credit');
 
     Route::prefix('account')->group(function () {
         Route::get('/', [\App\Http\Controllers\Account\AccountController::class, 'index'])->name('account');
