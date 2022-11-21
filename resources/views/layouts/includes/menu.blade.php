@@ -2903,7 +2903,7 @@
             <!--end:Menu sub-->
         </div>
         <!--end:Menu item-->
-        <a href="" class="menu-item me-0 me-lg-2">
+        <a href="" class="menu-item {{ Route::is('home') ? 'here' : '' }} me-0 me-lg-2">
             <span class="menu-link">
                 <span class="menu-title">Tableau de Bord</span>
                 <span class="menu-arrow d-lg-none"></span>
