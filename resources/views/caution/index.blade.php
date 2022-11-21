@@ -71,7 +71,7 @@
 @endsection
 
 @section("script")
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.0.279/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js"></script>
     <script type="text/javascript">
         let myState = {
             pdf: null,
