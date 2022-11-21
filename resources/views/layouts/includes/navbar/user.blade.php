@@ -16,7 +16,8 @@
                 <!--end::Avatar-->
                 <!--begin::Username-->
                 <div class="d-flex flex-column">
-                    <div class="fw-bold d-flex align-items-center fs-5">{{ $user->full_name }}
+                    <div class="fw-bold d-flex align-items-center fs-5">
+                        <span class="me-2">{{ $user->full_name }}</span>
                         {!! $user->type_caution_label !!}
                     </div>
                     <a href="#" class="fw-semibold text-muted text-hover-primary fs-7">{{ $user->email }}</a>
