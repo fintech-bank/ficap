@@ -69,7 +69,7 @@
                                     <a href="{{ $step->link }}" class="text-gray-800 text-hover-primary fw-bold fs-6">{{ $step->title }}</a>
                                 </div>
                                 <!--end::Description-->
-                                @if($step->complete)
+                                @if(!$step->complete)
                                     <a href="{{ $step->link }}" class="btn btn-sm btn-primary">{{ $step->cta }}</a>
                                 @endif
                             </div>
