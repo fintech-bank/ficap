@@ -62,7 +62,7 @@
                                 <!--end::Bullet-->
                                 <!--begin::Checkbox-->
                                 <div class="form-check form-check-custom form-check-solid mx-5">
-                                    <input class="form-check-input" type="checkbox" value="" @if($step->isComplete()) checked @endif>
+                                    <input class="form-check-input" type="checkbox" value="" @if($step->complete) checked @endif>
                                 </div>
                                 <!--end::Checkbox-->
                                 <!--begin::Description-->
@@ -70,7 +70,7 @@
                                     <a href="{{ $step->link }}" class="text-gray-800 text-hover-primary fw-bold fs-6">{{ $step->title }}</a>
                                 </div>
                                 <!--end::Description-->
-                                @if($step->isComplete())
+                                @if($step->complete)
                                     <a href="{{ $step->link }}" class="btn btn-sm btn-primary">{{ $step->cta }}</a>
                                 @endif
                             </div>
