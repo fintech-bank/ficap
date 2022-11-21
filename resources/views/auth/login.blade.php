@@ -64,7 +64,7 @@ License: For each use you must have a valid license purchased only from above li
                 <!--begin::Content-->
                 <div class="w-md-400px">
                     <!--begin::Form-->
-                    <form class="form w-100" novalidate="novalidate" id="" action="{{ route('login') }}">
+                    <form class="form w-100" novalidate="novalidate" id="" action="{{ route('login') }}" method="post">
                         <!--begin::Heading-->
                         <div class="text-center mb-11">
                             <!--begin::Title-->
