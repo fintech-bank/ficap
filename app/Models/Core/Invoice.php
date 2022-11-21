@@ -89,12 +89,13 @@ class Invoice extends Model
 
     public function getStatusColorAttribute()
     {
-        return match ($this->state) {
-            'open' => 'primary',
-            'paid' => 'success',
-            'uncollectible' => 'danger',
-            default => 'light',
-        };
+        switch ($this->state) {
+            case 'draft': return 'light';
+            case 'open': return 'primary';
+            case 'paid': return 'success';
+            case 'uncollectible': return 'danger';
+            default: return 'light';
+        }
     }
 
     public function getStatusIconAttribute()

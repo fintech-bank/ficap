@@ -108,9 +108,11 @@ class CustomerInsurance extends Model
     public function getStatusColorAttribute()
     {
         return match ($this->status) {
-            "active", "terminated" => "success",
-            "resilied", "juris" => "danger",
-            "suspended" => "warning"
+            "active" => "success",
+            "resilied" => "danger",
+            "terminated" => "success",
+            "suspended" => "warning",
+            "juris" => "danger"
         };
     }
 

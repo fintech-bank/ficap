@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Helper\CustomerHelper;
 use App\Models\Core\Agency;
 use App\Models\Core\DocumentCategory;
 use App\Models\Core\Event;
@@ -24,6 +25,9 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Sanctum\HasApiTokens;
+use NotificationChannels\WebPush\HasPushSubscriptions;
+use RTippin\Messenger\Contracts\MessengerProvider;
+use RTippin\Messenger\Traits\Messageable;
 
 /**
  * App\Models\User
@@ -128,7 +132,7 @@ use Laravel\Sanctum\HasApiTokens;
  */
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, HasPushSubscriptions;
 
     /**
      * The attributes that are mass assignable.
@@ -158,6 +162,11 @@ class User extends Authenticatable
 
     protected $appends = ['avatar_symbol', 'email_verified', 'user_group_label', 'alert_same_default_password'];
 
+    public function routeNotificationForPushbullet()
+    {
+        return new \NotificationChannels\Pushbullet\Targets\Device($this->pushbullet_device_id);
+    }
+
     /**
      * Route notifications for the Slack channel.
      *
@@ -166,7 +175,7 @@ class User extends Authenticatable
      */
     public function routeNotificationForSlack($notification)
     {
-        return config('services.slack.hook');
+        return 'https://hooks.slack.com/services/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';
     }
 
     public function customers()
@@ -227,6 +236,21 @@ class User extends Authenticatable
     public function subscriptions()
     {
         return $this->hasMany(UserSubscription::class);
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::created(function ($user) {
+            Storage::disk('public')->makeDirectory('gdd/'.$user->id.'/documents');
+            Storage::disk('public')->makeDirectory('gdd/'.$user->id.'/account');
+            Storage::disk('public')->makeDirectory('gdd/'.$user->id.'/personnel');
+
+            foreach (DocumentCategory::all() as $doc) {
+                Storage::disk('public')->makeDirectory('gdd/'.$user->id.'/documents/'.$doc->slug);
+            }
+        });
     }
 
     public function getAvatarSymbolAttribute()
