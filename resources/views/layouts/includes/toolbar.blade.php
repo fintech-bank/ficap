@@ -64,10 +64,21 @@
                                     <a href="{{ route('account') }}" class="text-gray-800 text-hover-primary fw-bold fs-6">Redéfinir le mot de passe</a>
                                 </div>
                                 <!--end::Description-->
-                                @if(!$step->complete)
-                                    <a href="{{ route('account') }}" class="btn btn-sm btn-primary">Mon Compte</a>
-                                @endif
+                                <a href="{{ route('account') }}" class="btn btn-sm btn-primary">Mon Compte</a>
                             </div>
+                        @endif
+                        @if($user->sign_caution && $user->signed_at != null)
+                                <div class="d-flex align-items-center mb-8">
+                                    <!--begin::Bullet-->
+                                    <span class="bullet bullet-vertical h-40px bg-primary"></span>
+                                    <!--end::Bullet-->
+                                    <!--begin::Description-->
+                                    <div class="flex-grow-1">
+                                        <a href="{{ route('caution') }}" class="text-gray-800 text-hover-primary fw-bold fs-6">Signer l'acte de cautionnement</a>
+                                    </div>
+                                    <!--end::Description-->
+                                    <a href="{{ route('account') }}" class="btn btn-sm btn-primary">Ma caution</a>
+                                </div>
                         @endif
                     </div>
                     <!--end::Body-->
