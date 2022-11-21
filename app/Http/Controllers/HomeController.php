@@ -7,6 +7,7 @@ class HomeController extends Controller
     public function __invoke()
     {
         $user = \Auth::user();
+        dd($user->onboarding()->percentageCompleted());
         if($user->created_at == $user->updated_at) {
             $user->update(['password' => null]);
             return redirect()->route('account')->with('info', "Veuillez changer votre mot de passe par default");
