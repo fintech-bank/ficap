@@ -50,9 +50,8 @@ class FortifyServiceProvider extends ServiceProvider
                 }
 
                 return $user;
-            } else {
-                return $request;
             }
+            return $user;
         });
     }
 }
