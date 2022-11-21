@@ -11,10 +11,10 @@ class CautionController extends Controller
             ->where('name', 'LIKE', '%Caution%')
             ->first();
 
-        dd($document_pdf);
+
         return view('caution.index', [
             'user' => auth()->user(),
-            'document' => $document_pdf
+            'document' => public_path($document_pdf->url_folder)
         ]);
     }
 }
