@@ -7,7 +7,7 @@
             <!--begin::Page title-->
             <div class="page-title d-flex flex-column justify-content-center me-3">
                 <!--begin::Title-->
-                <h1 class="page-heading d-flex title-custom fw-bolder fs-2hx flex-column justify-content-center my-0">Overview
+                <h1 class="page-heading d-flex title-custom fw-bolder fs-2hx flex-column justify-content-center my-0">Bienvenue {{ $user->full_name }}
                     <!--begin::Description-->
                     <span class="page-desc text-white opasity-50 fs-7 fw-semibold pt-2"></span>
                     <!--end::Description--></h1>
