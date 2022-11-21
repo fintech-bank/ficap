@@ -43,43 +43,41 @@
             <!--end::Col-->
             <!--begin::Col-->
             <div class="col-md-8 d-flex justify-content-md-end">
-                @if($user->onboarding()->inProgress())
-                    <!--begin::Card-->
-                    <div class="card card-flush bg-white border-0 mw-475px pt-3 pb-1">
-                        <!--begin::Header-->
-                        <div class="card-header d-flex align-items-center">
-                            <!--begin::Title-->
-                            <h2 class="title-custom fs-2">A Faire ensuite</h2>
-                            <!--end::Title-->
-                        </div>
-                        <!--end::Header-->
-                        <!--begin::Body-->
-                        <div class="card-body pt-3">
-                            @foreach($user->onboarding()->steps as $step)
-                                <div class="d-flex align-items-center mb-8">
-                                    <!--begin::Bullet-->
-                                    <span class="bullet bullet-vertical h-40px bg-primary"></span>
-                                    <!--end::Bullet-->
-                                    <!--begin::Checkbox-->
-                                    <div class="form-check form-check-custom form-check-solid mx-5">
-                                        <input class="form-check-input" type="checkbox" value="" @if($step->isComplete()) checked @endif>
-                                    </div>
-                                    <!--end::Checkbox-->
-                                    <!--begin::Description-->
-                                    <div class="flex-grow-1">
-                                        <a href="{{ $step->link }}" class="text-gray-800 text-hover-primary fw-bold fs-6">{{ $step->title }}</a>
-                                    </div>
-                                    <!--end::Description-->
-                                    @if($step->isComplete())
-                                        <a href="{{ $step->link }}" class="btn btn-sm btn-primary">{{ $step->cta }}</a>
-                                    @endif
-                                </div>
-                            @endforeach
-                        </div>
-                        <!--end::Body-->
+                <!--begin::Card-->
+                <div class="card card-flush bg-white border-0 mw-475px pt-3 pb-1">
+                    <!--begin::Header-->
+                    <div class="card-header d-flex align-items-center">
+                        <!--begin::Title-->
+                        <h2 class="title-custom fs-2">A Faire ensuite</h2>
+                        <!--end::Title-->
                     </div>
-                    <!--end::Card-->
-                @endif
+                    <!--end::Header-->
+                    <!--begin::Body-->
+                    <div class="card-body pt-3">
+                        @foreach($user->onboarding()->steps as $step)
+                            <div class="d-flex align-items-center mb-8">
+                                <!--begin::Bullet-->
+                                <span class="bullet bullet-vertical h-40px bg-primary"></span>
+                                <!--end::Bullet-->
+                                <!--begin::Checkbox-->
+                                <div class="form-check form-check-custom form-check-solid mx-5">
+                                    <input class="form-check-input" type="checkbox" value="" @if($step->isComplete()) checked @endif>
+                                </div>
+                                <!--end::Checkbox-->
+                                <!--begin::Description-->
+                                <div class="flex-grow-1">
+                                    <a href="{{ $step->link }}" class="text-gray-800 text-hover-primary fw-bold fs-6">{{ $step->title }}</a>
+                                </div>
+                                <!--end::Description-->
+                                @if($step->isComplete())
+                                    <a href="{{ $step->link }}" class="btn btn-sm btn-primary">{{ $step->cta }}</a>
+                                @endif
+                            </div>
+                        @endforeach
+                    </div>
+                    <!--end::Body-->
+                </div>
+                <!--end::Card-->
             </div>
             <!--end::Col-->
         </div>
