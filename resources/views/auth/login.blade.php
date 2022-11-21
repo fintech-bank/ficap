@@ -79,6 +79,7 @@ License: For each use you must have a valid license purchased only from above li
                             <!--end::Subtitle=-->
                         </div>
                         <!--begin::Heading-->
+                        @include("layouts.alert")
                         <!--begin::Input group=-->
                         <div class="fv-row mb-8">
                             <!--begin::Email-->
