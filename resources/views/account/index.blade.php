@@ -74,7 +74,7 @@
                     </div>
                     <!--end::Main wrapper-->
                     <div class="text-end">
-                        <x-form.button />
+                        <x-form.button class="btn btn-primary"/>
                     </div>
                 </form>
             </div>
