@@ -12,6 +12,7 @@ use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Fortify\Contracts\LoginResponse;
 use Laravel\Fortify\Fortify;
 
 class FortifyServiceProvider extends ServiceProvider
@@ -23,7 +24,12 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->instance(LoginResponse::class, new class implements LoginResponse {
+            public function toResponse($request)
+            {
+                dd($request);
+            }
+        });
     }
 
     /**
@@ -44,8 +50,6 @@ class FortifyServiceProvider extends ServiceProvider
                 }
 
                 return $user;
-            } else {
-                return redirect()->back()->with('warning', "Votre compte n'existe pas dans la base de donnée FICAP ou vous n'y avez pas accès !");
             }
         });
     }
