@@ -57,7 +57,7 @@
                         @if($user->created_at == $user->updated_at)
                             <div class="d-flex align-items-center mb-8">
                                 <!--begin::Bullet-->
-                                <span class="bullet bullet-vertical h-40px bg-primary"></span>
+                                <span class="bullet bullet-vertical h-40px bg-primary me-3"></span>
                                 <!--end::Bullet-->
                                 <!--begin::Description-->
                                 <div class="flex-grow-1">
@@ -70,7 +70,7 @@
                         @if($user->sign_caution == 0 && $user->signed_at == null)
                                 <div class="d-flex align-items-center mb-8">
                                     <!--begin::Bullet-->
-                                    <span class="bullet bullet-vertical h-40px bg-primary"></span>
+                                    <span class="bullet bullet-vertical h-40px bg-primary me-3"></span>
                                     <!--end::Bullet-->
                                     <!--begin::Description-->
                                     <div class="flex-grow-1">
