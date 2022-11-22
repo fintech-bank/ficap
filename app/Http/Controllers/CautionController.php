@@ -20,7 +20,8 @@ class CautionController extends Controller
 
         return view('caution.index', [
             'user' => auth()->user(),
-            'document' => '/tmp/'.$name_caution
+            'document' => '/tmp/'.$name_caution,
+            'ref_doc' => $document_pdf->reference
         ]);
     }
 }

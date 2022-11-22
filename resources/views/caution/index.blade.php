@@ -87,7 +87,7 @@
                             Vous allez recevoir un sms au numéro <strong>{{ $user->phone }}</strong> avec un code permettant de signer ce document.<br>
                             Veuillez saisir le code de 6 caractères après avoir cliqué sur le bouton suivant:
                         </p>
-                        <button class="btn btn-lg btn-circle btn-primary"><i class="fa-solid fa-signature me-2"></i> Je signe</button>
+                        <button class="btn btn-lg btn-circle btn-primary btnCode"><i class="fa-solid fa-signature me-2"></i> Je signe</button>
                     </div>
                     <div id="second">
                         <button class="btn btn-lg btn-circle btn-success"><i class="fa-solid fa-signature me-2"></i> Signez mon document</button>
@@ -184,5 +184,25 @@
 
                 render();
             });
+
+        document.querySelector('.btnCode').addEventListener('click', e => {
+            e.preventDefault()
+
+            $.ajax({
+                url: '/api/request-code',
+                method: 'POST',
+                data: {
+                    'ref_doc': '{{ $ref_doc }}',
+                    'num_phone': '{{ $user->phone }}',
+                    'sector': 'caution'
+                },
+                success: data => {
+                    console.log(data)
+                },
+                error: er => {
+                    console.error(er)
+                }
+            })
+        })
     </script>
 @endsection
