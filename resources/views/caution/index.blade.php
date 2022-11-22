@@ -91,7 +91,7 @@
                     </div>
                     <div id="second" class="text-center">
                         <p class="fs-3">Veuillez taper les 6 chiffres que vous avez reçus sur votre téléphone.</p>
-                        <div class="d-flex flex-wrap flex-stack">
+                        <div class="d-flex flex-wrap flex-stack my-3">
                             <input type="text" name="code_1" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2" value="" />
                             <input type="text" name="code_2" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2" value="" />
                             <input type="text" name="code_3" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2" value="" />
