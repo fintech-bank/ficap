@@ -44,12 +44,13 @@
                 <div class="card-header">
                     <h3 class="card-title">Acte de cautionnement</h3>
                     <div class="card-toolbar">
-                        <div class="btn-group me-2">
+                        <div class="btn-group me-2" id="navigation_controls">
                             <button class="btn btn-sm btn-icon btn-secondary" id="go_previous"><i class="fa-solid fa-arrow-left"></i> </button>
                             <button class="btn btn-sm btn-icon btn-secondary" id="go_next"><i class="fa-solid fa-arrow-right"></i> </button>
                         </div>
+                        <p>Page Actuel: <span id="current_page">1</span></p>
 
-                        <div class="btn-group me-2">
+                        <div class="btn-group me-2" id="zoom_controls">
                             <button class="btn btn-sm btn-icon btn-secondary" id="zoom_in"><i class="fa-solid fa-magnifying-glass-plus"></i> </button>
                             <button class="btn btn-sm btn-icon btn-secondary" id="zoom_out"><i class="fa-solid fa-magnifying-glass-minus"></i> </button>
                         </div>
