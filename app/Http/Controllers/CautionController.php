@@ -12,7 +12,7 @@ class CautionController extends Controller
             ->first();
 
         dd(\Storage::disk('gdd')->get($document_pdf->url_folder));
-        
+
 
 
         return view('caution.index', [
