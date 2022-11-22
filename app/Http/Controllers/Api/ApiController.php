@@ -25,7 +25,7 @@ class ApiController extends Controller
         return response()->json();
     }
 
-    public function verifyCode(Request $request)
+    public function verify_code(Request $request)
     {
         $fintech = new Fintech();
 
