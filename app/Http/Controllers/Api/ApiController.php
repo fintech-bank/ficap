@@ -10,6 +10,7 @@ class ApiController extends Controller
 {
     public function request_code(Request $request)
     {
+        dd($request->all());
         $fintech = new Fintech();
 
         dd($fintech->requestCode(
