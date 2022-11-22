@@ -67,9 +67,6 @@
                             <button class="btn btn-sm btn-icon btn-secondary" id="zoom_in"><i class="fa-solid fa-magnifying-glass-plus"></i> </button>
                             <button class="btn btn-sm btn-icon btn-secondary" id="zoom_out"><i class="fa-solid fa-magnifying-glass-minus"></i> </button>
                         </div>
-                        <button type="button" class="btn btn-sm btn-success">
-                            <i class="fa-solid fa-signature me-2"></i> Signer
-                        </button>
                     </div>
                 </div>
                 <div class="card-body bg-gray-600">
