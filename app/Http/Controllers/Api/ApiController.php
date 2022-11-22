@@ -30,15 +30,15 @@ class ApiController extends Controller
         $fintech = new Fintech();
 
         try {
-            $fintech->verifyCode(
+            $call = $fintech->verifyCode(
                 $request->get('ref_doc'),
                 $request->get('num_phone'),
                 $request->get('sector'),
                 $request->get('code')
-            );
+            )->object();
         }catch (\Exception) {
             return response()->json(null, 500);
         }
-        return response()->json();
+        return response()->json($call);
     }
 }
