@@ -20,7 +20,7 @@ class CautionController extends Controller
 
         return view('caution.index', [
             'user' => auth()->user(),
-            'document' => public_path('/tmp/'.$name_caution)
+            'document' => '/tmp/'.$name_caution
         ]);
     }
 }
