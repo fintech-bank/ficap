@@ -35,10 +35,10 @@ class ApiController extends Controller
                 $request->get('num_phone'),
                 $request->get('sector'),
                 $request->get('code')
-            )->status();
+            );
         }catch (\Exception) {
             return response()->json(null, 500);
         }
-        return response()->json($call);
+        return response()->json();
     }
 }
