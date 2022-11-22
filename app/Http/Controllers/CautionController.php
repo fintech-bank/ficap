@@ -12,7 +12,7 @@ class CautionController extends Controller
             ->first();
 
         $tmp_file = file_put_contents(
-            '/public/tmp/document.pdf',
+            public_path('/tmp/document.pdf'),
             \Storage::disk('gdd')->get($document_pdf->url_folder),
         );
 
