@@ -110,6 +110,7 @@
 @section("script")
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js"></script>
     <script type="text/javascript">
+        $("#second").hide()
         let myState = {
             pdf: null,
             currentPage: 1,
