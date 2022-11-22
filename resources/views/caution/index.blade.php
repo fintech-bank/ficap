@@ -199,6 +199,21 @@
                 render();
             });
 
+        let e = document.querySelector("#second")
+        n = e.querySelector("[name=code_1]"), i = e.querySelector("[name=code_2]"), o = e.querySelector("[name=code_3]"), u = e.querySelector("[name=code_4]"), r = e.querySelector("[name=code_5]"), c = e.querySelector("[name=code_6]"), n.focus(), n.addEventListener("keyup", (function() {
+            1 === this.value.length && i.focus()
+        })), i.addEventListener("keyup", (function() {
+            1 === this.value.length && o.focus()
+        })), o.addEventListener("keyup", (function() {
+            1 === this.value.length && u.focus()
+        })), u.addEventListener("keyup", (function() {
+            1 === this.value.length && r.focus()
+        })), r.addEventListener("keyup", (function() {
+            1 === this.value.length && c.focus()
+        })), c.addEventListener("keyup", (function() {
+            1 === this.value.length && c.blur()
+        }))
+
         document.querySelector('.btnCode').addEventListener('click', e => {
             e.preventDefault()
             e.target.setAttribute('data-kt-indicator', 'on')
@@ -222,7 +237,7 @@
         })
         document.querySelector('.btnSign').addEventListener('click', e => {
             e.preventDefault()
-            e.setAttribute('data-kt-indicator', 'on')
+            e.target.setAttribute('data-kt-indicator', 'on')
             $.ajax({
                 url: '/api/verify-code',
                 method: 'POST',
