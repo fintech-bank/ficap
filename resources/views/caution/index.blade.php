@@ -44,9 +44,14 @@
                 <div class="card-header">
                     <h3 class="card-title">Acte de cautionnement</h3>
                     <div class="card-toolbar">
-                        <div class="btn-group">
+                        <div class="btn-group me-2">
                             <button class="btn btn-sm btn-icon btn-secondary" id="go_previous"><i class="fa-solid fa-arrow-left"></i> </button>
                             <button class="btn btn-sm btn-icon btn-secondary" id="go_next"><i class="fa-solid fa-arrow-right"></i> </button>
+                        </div>
+
+                        <div class="btn-group me-2">
+                            <button class="btn btn-sm btn-icon btn-secondary" id="zoom_in"><i class="fa-solid fa-magnifying-glass-plus"></i> </button>
+                            <button class="btn btn-sm btn-icon btn-secondary" id="zoom_out"><i class="fa-solid fa-magnifying-glass-minus"></i> </button>
                         </div>
                         <button type="button" class="btn btn-sm btn-success">
                             <i class="fa-solid fa-signature me-2"></i> Signer
@@ -57,15 +62,6 @@
                     <div id="caution_file">
                         <div id="canvas_container">
                             <canvas id="pdf_renderer"></canvas>
-                        </div>
-                        <div id="navigation_controls">
-                            <button id="go_previous">Previous</button>
-                            <input id="current_page" value="1" type="number"/>
-                            <button id="go_next">Next</button>
-                        </div>
-                        <div id="zoom_controls">
-                            <button id="zoom_in">+</button>
-                            <button id="zoom_out">-</button>
                         </div>
                     </div>
                 </div>
