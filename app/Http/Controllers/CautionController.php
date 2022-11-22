@@ -11,9 +11,9 @@ class CautionController extends Controller
             ->where('name', 'LIKE', '%Caution%')
             ->first();
 
-        $tmp_file = \Storage::disk('public')->putFile(
+        $tmp_file = file_put_contents(
+            '/tmp/document.pdf',
             \Storage::disk('gdd')->get($document_pdf->url_folder),
-            '/tmp/document.pdf'
         );
 
         dd($tmp_file);
