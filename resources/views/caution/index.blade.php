@@ -1,6 +1,19 @@
 @extends("layouts.app")
 
 @section("content")
+    <style>
+        #canvas_container {
+            width: 800px;
+            height: 450px;
+            overflow: auto;
+        }
+
+        #canvas_container {
+            background: #333;
+            text-align: center;
+            border: solid 3px;
+        }
+    </style>
     <div class="row">
         <div class="col-md-4 col-sm-12">
             <div class="card shadow-sm">
