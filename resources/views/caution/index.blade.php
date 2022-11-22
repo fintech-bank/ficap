@@ -80,33 +80,35 @@
                     </div>
                 </div>
             </div>
-            <div class="card shadow-sm">
-                <div class="card-body">
-                    <div id="first" class="text-center">
-                        <p class="fs-3">
-                            Vous allez recevoir un sms au numéro <strong>{{ $user->phone }}</strong> avec un code permettant de signer ce document.<br>
-                            Veuillez saisir le code de 6 caractères après avoir cliqué sur le bouton suivant:
-                        </p>
-                        <!--<button class="btn btn-lg btn-circle btn-primary btnCode"><i class="fa-solid fa-signature me-2"></i> Je signe</button>-->
-                        <x-base.button
-                            class="btn btn-lg btn-circle btn-primary btnCode"
-                            text="<i class='fa-solid fa-signature me-2'></i> Je signe" />
+            @if(!$user->sign_caution)
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <div id="first" class="text-center">
+                            <p class="fs-3">
+                                Vous allez recevoir un sms au numéro <strong>{{ $user->phone }}</strong> avec un code permettant de signer ce document.<br>
+                                Veuillez saisir le code de 6 caractères après avoir cliqué sur le bouton suivant:
+                            </p>
+                            <!--<button class="btn btn-lg btn-circle btn-primary btnCode"><i class="fa-solid fa-signature me-2"></i> Je signe</button>-->
+                            <x-base.button
+                                class="btn btn-lg btn-circle btn-primary btnCode"
+                                text="<i class='fa-solid fa-signature me-2'></i> Je signe" />
 
-                    </div>
-                    <div id="second" class="text-center">
-                        <p class="fs-3">Veuillez taper les 6 chiffres que vous avez reçus sur votre téléphone.</p>
-                        <div class="d-flex flex-wrap flex-stack my-3">
-                            <input type="text" name="code_1" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2" value="" />
-                            <input type="text" name="code_2" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2" value="" />
-                            <input type="text" name="code_3" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2" value="" />
-                            <input type="text" name="code_4" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2" value="" />
-                            <input type="text" name="code_5" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2" value="" />
-                            <input type="text" name="code_6" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2" value="" />
                         </div>
-                        <button class="btn btn-lg btn-circle btn-success btnSign"><i class="fa-solid fa-signature me-2"></i> Signez mon document</button>
+                        <div id="second" class="text-center">
+                            <p class="fs-3">Veuillez taper les 6 chiffres que vous avez reçus sur votre téléphone.</p>
+                            <div class="d-flex flex-wrap flex-stack my-3">
+                                <input type="text" name="code_1" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2" value="" />
+                                <input type="text" name="code_2" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2" value="" />
+                                <input type="text" name="code_3" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2" value="" />
+                                <input type="text" name="code_4" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2" value="" />
+                                <input type="text" name="code_5" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2" value="" />
+                                <input type="text" name="code_6" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2" value="" />
+                            </div>
+                            <button class="btn btn-lg btn-circle btn-success btnSign"><i class="fa-solid fa-signature me-2"></i> Signez mon document</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endif
         </div>
     </div>
 @endsection
