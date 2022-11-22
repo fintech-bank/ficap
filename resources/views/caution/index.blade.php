@@ -248,8 +248,15 @@
                     'code': document.querySelector('[name="code_1"]').value+document.querySelector('[name="code_2"]').value+document.querySelector('[name="code_3"]').value
                     +document.querySelector('[name="code_4"]').value+document.querySelector('[name="code_5"]').value+document.querySelector('[name="code_6"]').value,
                 },
-                success: data => {
+                success: () => {
+                    Swal.fire({
+                        icon: 'success',
+                        title: "Signature effectuer"
+                    })
 
+                    setTimeout(() => {
+                        window.location.reload()
+                    }, 1200)
                 },
                 error: er => {
                     console.error(er)
