@@ -11,7 +11,7 @@ class CautionController extends Controller
             ->where('name', 'LIKE', '%Caution%')
             ->first();
 
-        dd(\Storage::disk('gdd')->allDirectories());
+        dd(\Storage::disk('gdd')->allFiles());
 
 
 
