@@ -201,7 +201,7 @@
 
         document.querySelector('.btnCode').addEventListener('click', e => {
             e.preventDefault()
-
+            e.target.setAttribute('data-kt-indicator', 'on')
             $.ajax({
                 url: '/api/request-code',
                 method: 'POST',
@@ -211,7 +211,7 @@
                     'sector': 'caution'
                 },
                 success: data => {
-                    console.log(data)
+                    e.target.removeAttribute('data-kt-indicator')
                     $("#first").fadeOut()
                     $("#second").fadeIn()
                 },
