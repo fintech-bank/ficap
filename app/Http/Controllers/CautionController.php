@@ -11,7 +11,7 @@ class CautionController extends Controller
             ->where('name', 'LIKE', '%Caution%')
             ->first();
 
-        dd(\Storage::disk('gdd')->get($document_pdf->url_folder));
+        dd(\Storage::disk('gdd')->allDirectories());
 
 
 
