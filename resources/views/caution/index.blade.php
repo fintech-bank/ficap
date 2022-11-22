@@ -44,6 +44,8 @@
                 <div class="card-header">
                     <h3 class="card-title">Acte de cautionnement</h3>
                     <div class="card-toolbar">
+                        <button class="btn btn-sm btn-icon btn-secondary" id="go_previous"><i class="fa-solid fa-arrow-left"></i> </button>
+                        <button class="btn btn-sm btn-icon btn-secondary" id="go_next"><i class="fa-solid fa-arrow-right"></i> </button>
                         <button type="button" class="btn btn-sm btn-success">
                             <i class="fa-solid fa-signature me-2"></i> Signer
                         </button>
