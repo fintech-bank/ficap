@@ -90,6 +90,14 @@
                         <button class="btn btn-lg btn-circle btn-primary btnCode"><i class="fa-solid fa-signature me-2"></i> Je signe</button>
                     </div>
                     <div id="second">
+                        <div class="d-flex flex-wrap flex-stack">
+                            <input type="text" name="code_1" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2" value="" />
+                            <input type="text" name="code_2" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2" value="" />
+                            <input type="text" name="code_3" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2" value="" />
+                            <input type="text" name="code_4" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2" value="" />
+                            <input type="text" name="code_5" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2" value="" />
+                            <input type="text" name="code_6" data-inputmask="'mask': '9', 'placeholder': ''" maxlength="1" class="form-control bg-transparent h-60px w-60px fs-2qx text-center mx-1 my-2" value="" />
+                        </div>
                         <button class="btn btn-lg btn-circle btn-success"><i class="fa-solid fa-signature me-2"></i> Signez mon document</button>
                     </div>
                 </div>
@@ -198,6 +206,8 @@
                 },
                 success: data => {
                     console.log(data)
+                    $("#first").fadeOut()
+                    $("#second").fadeIn()
                 },
                 error: er => {
                     console.error(er)

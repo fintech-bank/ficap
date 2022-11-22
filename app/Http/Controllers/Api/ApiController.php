@@ -12,10 +12,16 @@ class ApiController extends Controller
     {
         $fintech = new Fintech();
 
-        dd($fintech->requestCode(
-            $request->get('ref_doc'),
-            $request->get('num_phone'),
-            $request->get('sector')
-        ));
+        try {
+            $fintech->requestCode(
+                $request->get('ref_doc'),
+                $request->get('num_phone'),
+                $request->get('sector')
+            );
+        }catch (\Exception $exception) {
+            return response()->json(null, 500);
+        }
+
+        return response()->json();
     }
 }
