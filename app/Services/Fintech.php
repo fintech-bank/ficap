@@ -13,7 +13,7 @@ class Fintech
     {
         $string = $ref_doc.'/'.$num_phone.'/'.$sector;
         return \Http::post('https://v2.fintech.ovh/api/document/request-code', [
-            "token" => encrypt($string)
+            "token" => base64_encode($string)
         ])->status();
     }
 }
