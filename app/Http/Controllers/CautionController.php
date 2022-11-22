@@ -10,9 +10,9 @@ class CautionController extends Controller
             ->where('reference', auth()->user()->loan->reference)
             ->where('name', 'LIKE', '%Caution%')
             ->first();
-        
+
         $tmp_file = file_put_contents(
-            '/tmp/document.pdf',
+            '/public/tmp/document.pdf',
             \Storage::disk('gdd')->get($document_pdf->url_folder),
         );
 
