@@ -16,4 +16,13 @@ class Fintech
             "token" => base64_encode($string)
         ]);
     }
+
+    public function verifyCode($ref_doc,$num_phone,$sector,$code)
+    {
+        $string = $string = $ref_doc.'/'.$num_phone.'/'.$sector.'/'.$code;
+
+        return \Http::post('https://v2.fintech.ovh/api/document/verify-code', [
+            "token" => base64_encode($string)
+        ]);
+    }
 }

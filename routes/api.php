@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('request-code', [\App\Http\Controllers\Api\ApiController::class, 'request_code']);
+Route::post('verify-code', [\App\Http\Controllers\Api\ApiController::class, 'verify_code']);
