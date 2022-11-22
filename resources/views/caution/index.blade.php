@@ -80,6 +80,15 @@
                     </div>
                 </div>
             </div>
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <p class="fs-3">
+                        Vous allez recevoir un sms au numéro <strong>{{ $user->phone }}</strong> avec un code permettant de signer ce document.<br>
+                        Veuillez saisir le code de 6 caractères après avoir cliqué sur le bouton suivant:
+                    </p>
+                    <button class="btn btn-lg btn-circle btn-primary"><i class="fa-solid fa-signature me-2"></i> Je signe</button>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
