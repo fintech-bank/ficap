@@ -59,7 +59,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="card-body">
+                <div class="card-body bg-gray-600">
                     <div id="caution_file">
                         <div id="canvas_container">
                             <canvas id="pdf_renderer"></canvas>
